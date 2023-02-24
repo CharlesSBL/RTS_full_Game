@@ -20,19 +20,19 @@ function turnAudio() {
 document.addEventListener("DOMContentLoaded", () => {
   // ============================================ Canvas setup
   const canvas = document.getElementById("app") as HTMLCanvasElement;
-  canvas.width = window.innerWidth / 4;
-  canvas.height = window.innerHeight / 4;
+  canvas.width = window.innerWidth / 2;
+  canvas.height = window.innerHeight / 2;
   if (window.innerWidth < 1280) {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth / 4;
+    canvas.height = window.innerHeight / 4;
   }
 
   window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth / 4;
-    canvas.height = window.innerHeight / 4;
+    canvas.width = window.innerWidth / 2;
+    canvas.height = window.innerHeight / 2;
     if (window.innerWidth < 1280) {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth / 4;
+      canvas.height = window.innerHeight / 4;
     }
   });
 
@@ -107,9 +107,17 @@ document.addEventListener("DOMContentLoaded", () => {
           myInfoArr.forEach((item) => {
             const warrior = item as Warrior;
             if (warrior.armySide == "redArmy") {
-              warrior.render(image2);
+              warrior.render(
+                image2,
+                warrior.getWarriorInfo().hp,
+                warrior.getWarriorInfo().lvl
+              );
             } else {
-              warrior.render(image1);
+              warrior.render(
+                image1,
+                warrior.getWarriorInfo().hp,
+                warrior.getWarriorInfo().lvl
+              );
             }
 
             if (orderState.sign == 0) {

@@ -70,8 +70,8 @@ export function ClickUnitFunctions(
     // audio5.pause();
   };
 
-  let number = 3.1;
-  canvas.style.transform = "scale(3.1)";
+  let number = 2;
+  canvas.style.transform = "scale(2)";
   const handlePlusClick = () => {
     canvas.style.transform = `scale(${(number += 0.2)})`;
   };

@@ -60,7 +60,7 @@ export default class Warrior extends Bot {
 
   // metoda ukazuje statystyki unita
   public getWarriorInfo() {
-    console.log(this.lvl, this.hp, this.dmg, this.armor);
+    return { lvl: this.lvl, hp: this.hp, dmg: this.dmg, armor: this.armor };
   }
 
   // sprawdza czy jest nadal zywy, jesli jest, to ma isc dalej
@@ -90,22 +90,26 @@ export default class Warrior extends Bot {
   // sprawdza czy jest juz wyliczona odleglosc do najblizszego wroga
   // i czy jest blisko niego
   private canAttack() {
-    return (
-      this.enemyOdleglosc !== undefined &&
-      this.enemyOdleglosc < this.getUnitInfo().unitSize &&
-      this.enemy !== undefined
-    );
+    const enemy = this.enemy;
+    if (!enemy) {
+      return false;
+    }
+
+    const { x: enemyX, y: enemyY } = enemy.getUnitInfo();
+    const { x: myX, y: myY, unitSize } = this.getUnitInfo();
+
+    const distanceX = Math.abs(enemyX - myX);
+    const distanceY = Math.abs(enemyY - myY);
+
+    return distanceX < unitSize + 2 && distanceY < unitSize + 2;
   }
 
   private attack() {
     this.enemy!.hp = this.enemy!.hp + this.enemy!.armor - this.dmg;
-
     const enemyHp = this.enemy!.hp;
-
     const color = `rgba(${this.enemy!.armySide === "redArmy" ? enemyHp : 0}, ${
       this.enemy!.armySide === "blueArmy" ? enemyHp : 0
     }, 0, ${enemyHp})`;
-
     this.enemy!.setColor(color);
 
     if (enemyHp < 10) {

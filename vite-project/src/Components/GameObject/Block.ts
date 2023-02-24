@@ -44,13 +44,23 @@ export default class Block extends GameObject {
     ctx.fillRect(this.x, this.y, this.unitSize, this.unitSize);
   }
 
-  public render(image: HTMLImageElement): void {
+  public render(
+    image: HTMLImageElement,
+    liveMeter: number,
+    lvlMeter: number
+  ): void {
     const ctx = this.getCtx().ctx;
     if (!ctx || !this.x || !this.y || !this.unitSize) {
       return;
     }
+
     ctx.fillStyle = this.color;
-    // ctx.fillRect(this.x, this.y, this.unitSize, this.unitSize);
+    ctx.fillRect(
+      this.x,
+      this.y - this.unitSize / 2,
+      liveMeter / 6.5,
+      this.unitSize / 4
+    );
     ctx.drawImage(
       image, // image
       0, // position of starting cut

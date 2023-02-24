@@ -72,7 +72,7 @@ export function GenWarriors(
       //   setting army side
       colorSide,
       AllWarriorsArr,
-      RandomNum(10) + 5
+      1
     );
     myInfoArr.push(newWarrior);
     AllWarriorsArr.push(newWarrior);
