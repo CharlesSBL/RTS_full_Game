@@ -16,7 +16,7 @@ export default class Warrior extends Bot {
   armySide: ArmySide;
   private allWarriors: Warrior[] = [];
   private enemyArr: Warrior[] = [];
-  private enemyOdleglosc?: number;
+  // private enemyOdleglosc?: number;
   private enemy?: Warrior;
 
   constructor(
@@ -113,7 +113,7 @@ export default class Warrior extends Bot {
     this.enemy!.setColor(color);
 
     if (enemyHp < 10) {
-      this.enemyOdleglosc = undefined;
+      // this.enemyOdleglosc = undefined;
       this.enemy = undefined;
     }
   }
@@ -216,7 +216,7 @@ export default class Warrior extends Bot {
     // calej logiki szukania wroga
     if (wrogOdleglosc < this.getUnitInfo().unitSize * 2) {
       this.enemy = objDestination;
-      this.enemyOdleglosc = wrogOdleglosc;
+      // this.enemyOdleglosc = wrogOdleglosc;
     }
   }
 }

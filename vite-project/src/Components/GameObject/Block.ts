@@ -44,11 +44,7 @@ export default class Block extends GameObject {
     ctx.fillRect(this.x, this.y, this.unitSize, this.unitSize);
   }
 
-  public render(
-    image: HTMLImageElement,
-    liveMeter: number,
-    lvlMeter: number
-  ): void {
+  public render(image: HTMLImageElement, liveMeter: number): void {
     const ctx = this.getCtx().ctx;
     if (!ctx || !this.x || !this.y || !this.unitSize) {
       return;

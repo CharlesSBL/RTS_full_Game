@@ -107,17 +107,9 @@ document.addEventListener("DOMContentLoaded", () => {
           myInfoArr.forEach((item) => {
             const warrior = item as Warrior;
             if (warrior.armySide == "redArmy") {
-              warrior.render(
-                image2,
-                warrior.getWarriorInfo().hp,
-                warrior.getWarriorInfo().lvl
-              );
+              warrior.render(image2, warrior.getWarriorInfo().hp);
             } else {
-              warrior.render(
-                image1,
-                warrior.getWarriorInfo().hp,
-                warrior.getWarriorInfo().lvl
-              );
+              warrior.render(image1, warrior.getWarriorInfo().hp);
             }
 
             if (orderState.sign == 0) {
