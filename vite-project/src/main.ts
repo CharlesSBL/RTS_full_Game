@@ -116,11 +116,11 @@ document.addEventListener("DOMContentLoaded", () => {
         requestAnimationFrame(animate);
       };
 
-      image2.src = "../Assets/Katan.png";
+      image2.src = "../public/Katan.png";
     };
 
     // ============================================ load image
-    image1.src = "../Assets/Borg.png";
+    image1.src = "../public/Borg.png";
   };
 
   Start();
