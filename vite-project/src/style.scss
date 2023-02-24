@@ -144,3 +144,117 @@ p {
   width: 160px;
   left: calc(35% + 320px);
 }
+
+@media screen and (max-width: 1280px) {
+  button {
+    font-size: 25px;
+    position: fixed;
+    z-index: 1;
+    width: 60px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: none;
+    background-color: rgb(42, 81, 165);
+    border: 2px solid rgb(255, 196, 0);
+    color: white;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.1s ease;
+    &:hover {
+      background-color: rgb(91, 20, 20);
+      color: white;
+    }
+  }
+
+  #btnFight {
+    width: 100px;
+    top: 0;
+    left: 195px;
+  }
+  #btnStop {
+    top: 0;
+    left: 130px;
+  }
+  #btnPlus {
+    top: 0;
+    left: 65px;
+  }
+  #btnMinus {
+    top: 0;
+    left: 0px;
+  }
+
+  p {
+    font-size: 25px;
+    position: fixed;
+    z-index: 1;
+    width: 80px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: none;
+    background-color: rgb(42, 81, 165);
+    border: 2px solid rgb(201, 154, 0);
+    color: white;
+    margin: 10px;
+    border-radius: 10px;
+    transition: 0.1s ease;
+  }
+
+  #orcs {
+    background-color: rgb(186, 0, 0);
+    color: black;
+    top: 90%;
+
+    left: calc(0% + 85px);
+  }
+  #heros {
+    top: 90%;
+    // bottom: 0%;
+    left: calc(0%);
+  }
+  #forms {
+    input {
+      font-size: 25px;
+      position: fixed;
+      z-index: 1;
+      // top: 0;
+      width: 80px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border: none;
+      // background-color: rgb(42, 81, 165);
+      border: 2px solid rgb(201, 154, 0);
+      color: white;
+      margin: 10px;
+      border-radius: 10px;
+      transition: 0.1s ease;
+    }
+  }
+
+  #numOrc {
+    background-color: rgb(178, 0, 0);
+    top: 80%;
+    left: calc(0% + 85px);
+  }
+  #numHero {
+    background-color: rgb(42, 81, 165);
+    top: 80%;
+
+    left: calc(0%);
+  }
+  #btnGen {
+    top: 70%;
+    width: 160px;
+    left: calc(0%);
+  }
+}

@@ -22,9 +22,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("app") as HTMLCanvasElement;
   canvas.width = window.innerWidth / 4;
   canvas.height = window.innerHeight / 4;
+  if (window.innerWidth < 1280) {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
   window.addEventListener("resize", () => {
     canvas.width = window.innerWidth / 4;
     canvas.height = window.innerHeight / 4;
+    if (window.innerWidth < 1280) {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
   });
 
   // ============================================ p setup
