@@ -6,11 +6,10 @@ import Warrior from "./Components/GameObject/Warrior";
 import { ClickUnitFunctions } from "./Components/Functions/ClickUnitFunctions";
 import { GenWarriors } from "./Components/Functions/GenWarriors";
 import GameObject from "./Components/GameObject/GameObject";
-
 const audio = new Audio();
-audio.src = "./Assets/Audio/DesertSound.mp3";
+audio.src = "../Audio/DesertSound.mp3";
 const audio2 = new Audio();
-audio2.src = "./Assets/Audio/Footsteps.mp3";
+audio2.src = "../Audio/Footsteps.mp3";
 
 function turnAudio() {
   audio2.play();
@@ -116,11 +115,11 @@ document.addEventListener("DOMContentLoaded", () => {
         requestAnimationFrame(animate);
       };
 
-      image2.src = "../public/Katan.png";
+      image2.src = "../Katan.png";
     };
 
     // ============================================ load image
-    image1.src = "../public/Borg.png";
+    image1.src = "../Borg.png";
   };
 
   Start();

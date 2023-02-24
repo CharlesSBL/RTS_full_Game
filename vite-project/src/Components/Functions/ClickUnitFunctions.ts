@@ -18,7 +18,7 @@ numOrc.value = "10";
 numHero.value = "10";
 
 const audio4 = new Audio();
-audio4.src = "./Assets/Audio/btnSound.mp3";
+audio4.src = "../Audio/btnSound.mp3";
 
 const elem = document.documentElement;
 function openFullscreen() {
