@@ -123,6 +123,7 @@ export default class Warrior extends Bot {
     // sprawdza czy martwy
     this.die();
 
+    // chatoyczne chodzenie
     this.berserk();
 
     // sprawdza czy jest cel

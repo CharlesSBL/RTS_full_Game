@@ -20,15 +20,24 @@ function turnAudio() {
 document.addEventListener("DOMContentLoaded", () => {
   // ============================================ Canvas setup
   const canvas = document.getElementById("app") as HTMLCanvasElement;
-  canvas.width = window.innerWidth / 2;
+  // const testDiv = document.getElementById("test") as HTMLDivElement;
+  // Move the canvas element using hardware acceleration
+
+  const body = document.body as HTMLBodyElement;
+
+  body.style.height = `${window.innerHeight * 3}px`;
+  body.style.width = `${window.innerWidth * 2}px`;
+
+  canvas.width = window.innerWidth / 3;
   canvas.height = window.innerHeight / 2;
+
   if (window.innerWidth < 1280) {
     canvas.width = window.innerWidth / 4;
     canvas.height = window.innerHeight / 4;
   }
 
   window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth / 2;
+    canvas.width = window.innerWidth / 3;
     canvas.height = window.innerHeight / 2;
     if (window.innerWidth < 1280) {
       canvas.width = window.innerWidth / 4;
@@ -73,54 +82,56 @@ document.addEventListener("DOMContentLoaded", () => {
           AllWarriorsArr
         );
 
+        let fps = 0;
+
         // ============================================================ Start animation loop.
         const animate: FrameRequestCallback = () => {
-          // ====================================== clearing frame
-          myUnit.clearCanvas();
+          fps++;
 
-          // ================================= check army side numbers
-          const orcs: Warrior[] = AllWarriorsArr.filter((item) => {
-            return item.armySide == "redArmy";
-          });
-          const heroes: Warrior[] = AllWarriorsArr.filter((item) => {
-            return item.armySide == "blueArmy";
-          });
+          if (fps == 1) {
+            myUnit.clearCanvas();
+            // ====================================== clearing frame
 
-          if (pHeroes) {
-            pHeroes.innerHTML = `${heroes.length}`;
-          }
-          if (pOrcs) {
-            pOrcs.innerHTML = `${orcs.length}`;
-          }
+            // ================================= check army side numbers
+            const orcs: Warrior[] = AllWarriorsArr.filter((item) => {
+              return item.armySide == "redArmy";
+            });
+            const heroes: Warrior[] = AllWarriorsArr.filter((item) => {
+              return item.armySide == "blueArmy";
+            });
 
-          if (heroes.length == 0 || orcs.length == 0) {
-            // if (heroes.length == 0) {
-            // alert("HEROES HAS BEEN DEFEATED!!!");
-            // return;
-            // } else {
-            // alert("ORCS HAS BEEN DEFEATED!!!");
-            // return;
+            if (pHeroes) {
+              pHeroes.innerHTML = `${heroes.length}`;
+            }
+            if (pOrcs) {
+              pOrcs.innerHTML = `${orcs.length}`;
+            }
+
+            // if (heroes.length == 0 || orcs.length == 0) {
             // }
+
+            // ================================================ render units
+            myInfoArr.forEach((item) => {
+              const warrior = item as Warrior;
+              if (warrior.armySide == "redArmy") {
+                warrior.render(image2, warrior.getWarriorInfo().hp);
+              } else {
+                warrior.render(image1, warrior.getWarriorInfo().hp);
+              }
+
+              if (orderState.sign == 0) {
+                warrior.randomWalk();
+              } else {
+                warrior.closestEnemy();
+              }
+            });
+
+            fps = 0;
           }
 
-          // ================================================ render units
-          myInfoArr.forEach((item) => {
-            const warrior = item as Warrior;
-            if (warrior.armySide == "redArmy") {
-              warrior.render(image2, warrior.getWarriorInfo().hp);
-            } else {
-              warrior.render(image1, warrior.getWarriorInfo().hp);
-            }
-
-            if (orderState.sign == 0) {
-              warrior.randomWalk();
-            } else {
-              warrior.closestEnemy();
-            }
-          });
           requestAnimationFrame(animate);
+          // =======================================================
         };
-
         requestAnimationFrame(animate);
       };
 

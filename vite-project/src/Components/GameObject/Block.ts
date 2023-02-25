@@ -35,15 +35,6 @@ export default class Block extends GameObject {
       )}, ${getRandomNumber(200)}, 1)`;
   }
 
-  public render2(): void {
-    const ctx = this.getCtx().ctx;
-    if (!ctx || !this.x || !this.y || !this.unitSize) {
-      return;
-    }
-    ctx.fillStyle = this.color;
-    ctx.fillRect(this.x, this.y, this.unitSize, this.unitSize);
-  }
-
   public render(image: HTMLImageElement, liveMeter: number): void {
     const ctx = this.getCtx().ctx;
     if (!ctx || !this.x || !this.y || !this.unitSize) {
@@ -52,8 +43,8 @@ export default class Block extends GameObject {
 
     ctx.fillStyle = this.color;
     ctx.fillRect(
-      this.x,
-      this.y - this.unitSize / 2,
+      this.x - 4,
+      this.y - this.unitSize,
       liveMeter / 6.5,
       this.unitSize / 4
     );
@@ -63,11 +54,12 @@ export default class Block extends GameObject {
       0,
       16, // cut in x, y
       16,
-      this.x, // position of unit
-      this.y,
+      this.x - 4, // position of unit
+      this.y - 4,
       this.unitSize * 2, // size of unit
       this.unitSize * 2
     );
+    // ctx.fillRect(this.x, this.y, this.unitSize, this.unitSize);
   }
 
   public setColor(color: string) {

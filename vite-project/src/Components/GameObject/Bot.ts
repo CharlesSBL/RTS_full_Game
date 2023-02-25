@@ -28,10 +28,10 @@ export default class Bot extends Unit {
   public randomWalk(): void {
     const { x: currentX, y: currentY } = this.getUnitInfo();
     const directions = [
-      { x: currentX + 1, y: currentY },
-      { x: currentX - 1, y: currentY },
-      { x: currentX, y: currentY + 0 },
-      { x: currentX, y: currentY - 0 },
+      { x: currentX + this.unitSpeed, y: currentY },
+      { x: currentX - this.unitSpeed, y: currentY },
+      { x: currentX, y: currentY + this.unitSpeed },
+      { x: currentX, y: currentY - this.unitSpeed },
     ];
     const randomDirection = directions[randomNum(4)];
     this.setPosition(randomDirection.x, randomDirection.y);
@@ -40,10 +40,10 @@ export default class Bot extends Unit {
   public berserk(): void {
     const { x: currentX, y: currentY } = this.getUnitInfo();
     const directions = [
-      { x: currentX + 1, y: currentY },
-      { x: currentX - 1, y: currentY },
-      { x: currentX, y: currentY + 3 },
-      { x: currentX, y: currentY - 3 },
+      { x: currentX + 2, y: currentY },
+      { x: currentX - 2, y: currentY },
+      { x: currentX, y: currentY + 2 },
+      { x: currentX, y: currentY - 2 },
     ];
     const randomDirection = directions[randomNum(4)];
     this.setPosition(randomDirection.x, randomDirection.y);
