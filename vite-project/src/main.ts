@@ -31,18 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
   canvas.width = window.innerWidth / 3;
   canvas.height = window.innerHeight / 2;
 
-  if (window.innerWidth < 1280) {
-    canvas.width = window.innerWidth / 4;
-    canvas.height = window.innerHeight / 4;
-  }
-
   window.addEventListener("resize", () => {
     canvas.width = window.innerWidth / 3;
     canvas.height = window.innerHeight / 2;
-    if (window.innerWidth < 1280) {
-      canvas.width = window.innerWidth / 4;
-      canvas.height = window.innerHeight / 4;
-    }
   });
 
   // ============================================ p setup
