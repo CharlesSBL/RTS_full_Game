@@ -36,6 +36,15 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas.height = 375;
   });
 
+  console.log(body.style.height);
+  console.log(Number(body.style.height.slice(0, 4)));
+
+  window.scroll({
+    top: Number(body.style.height.slice(0, 4)) / 3.1,
+    left: Number(body.style.width.slice(0, 4)) / 4,
+    behavior: "smooth",
+  });
+
   // ============================================ p setup
   const pHeroes: HTMLElement | null = document.getElementById("heros");
   const pOrcs: HTMLElement | null = document.getElementById("orcs");

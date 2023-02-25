@@ -12,6 +12,42 @@ body {
   background-color: rgb(37, 0, 63);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes anim {
+  0% {
+    background-color: rgb(42, 81, 165);
+  }
+
+  50% {
+    background-color: rgb(25, 58, 127);
+  }
+
+  100% {
+    background-color: rgb(42, 81, 165);
+  }
+}
+// animation: anim 0.2s ease;
+
+// ==============* Scroll Bar *============== \\
+::-webkit-scrollbar {
+  width: 5px;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 2em;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(101, 0, 179);
+  border-radius: 2em;
+
+  &:hover {
+    background: rgb(49, 0, 112);
+  }
+}
+
 #menu {
   position: fixed;
   z-index: 1;
@@ -26,38 +62,13 @@ body {
 }
 
 #test {
-  // position: fixed;
-  // top: 0;
-  // left: 25%;
-  // overflow: scroll;
-  // height: 5000px;
-  // width: 5000px;
-  // background-color: rgb(43, 0, 74);
-  // background-color: rgb(28, 70, 0);
-  // margin: 0;
-  // padding: 0;
-  // border-radius: 25px;
-  // border: 25px solid rgb(55, 0, 95);
-  // box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.2);
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
 }
 
 canvas {
-  // height: 200%;
-  // width: 200%;
-  // border-radius: 25px;
   border: 5px solid rgb(100, 0, 147);
   border-radius: 10px;
-
-  // margin-top: 55px;
-  // height: 100vh;
-  // width: 100lh;
   background-image: url("../ground2.png");
   image-rendering: pixelated;
-  // background-position: bottom;
-  // scale: (1);
 }
 
 button {
@@ -88,6 +99,8 @@ button {
   width: 200px;
   top: 0;
   left: 300px;
+  animation: anim 2s infinite ease;
+  // animation: infinite;
 }
 #btnStop {
   top: 0;
@@ -167,6 +180,7 @@ p {
   top: 0;
   width: 160px;
   left: calc(35% + 320px);
+  animation: anim 2s infinite ease;
 }
 
 @media screen and (max-width: 1280px) {
