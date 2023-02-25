@@ -28,12 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
   body.style.height = `${window.innerHeight * 3}px`;
   body.style.width = `${window.innerWidth * 2}px`;
 
-  canvas.width = window.innerWidth / 3;
-  canvas.height = window.innerHeight / 2;
+  canvas.width = 750;
+  canvas.height = 375;
 
   window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth / 3;
-    canvas.height = window.innerHeight / 2;
+    canvas.width = 750;
+    canvas.height = 375;
   });
 
   // ============================================ p setup
