@@ -163,7 +163,7 @@ const nearestEnemy = odlegloscWrogow.reduce(
 ## Setup & Usage
 1. **Install Dependencies**:
    ```bash
-   npm install typescript webpack sass
+   npm i
    ```
 
 2. **Development Build**:
