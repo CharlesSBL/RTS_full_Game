@@ -1,5 +1,8 @@
 # Army Battle Simulation - Project Documentation & Showcase
 
+
+![Army Battle](./rts.png)
+
 PREVIEW in web the game: https://rts-game-hazel.vercel.app/
 
 *Concept visualization of opposing armies clashing on a desert battlefield*
