@@ -7,6 +7,9 @@ PREVIEW in web the game: https://rts-game-hazel.vercel.app/
 
 *Concept visualization of opposing armies clashing on a desert battlefield*
 
+The AI like Chatgpt and etc been only used to geenrate a README.md file (The documentation),
+The game itself is hand written. 
+
 ## Overview
 A real-time 2D battle simulator showcasing autonomous warriors from opposing armies (Blue vs Red) with strategic combat behaviors. Built with TypeScript and Canvas API, this project demonstrates:
 
